@@ -19,7 +19,6 @@ class TodoList extends StatelessWidget {
             itemBuilder: (_, index) {
               return ListTile(
                 title: Text(titleController.observeList[index].title),
-                //onTap: null,
               );
             },
             separatorBuilder: (_, __) {

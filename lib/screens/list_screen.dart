@@ -9,6 +9,8 @@ class ListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controllernome = TextEditingController();
+    final controllersobrenome = TextEditingController();
     final screenwidth = MediaQuery.of(context).size.width;
     final textwidth = screenwidth * 0.8;
     final titleController = TitleController();
@@ -34,6 +36,7 @@ class ListScreen extends StatelessWidget {
               WidgetTextfield(
                 text: 'Nome',
                 width: textwidth,
+                controller: controllernome,
                 action: titleController.novoNome,
               ),
               const SizedBox(
@@ -42,15 +45,24 @@ class ListScreen extends StatelessWidget {
               WidgetTextfield(
                 text: 'Sobrenome',
                 width: textwidth,
+                controller: controllersobrenome,
                 action: titleController.novoSobrenome,
               ),
               const SizedBox(
                 height: 15,
               ),
-              ElevatedButton(
-                onPressed: titleController.addTodo,
-                child: const Text('Adicionar'),
-              ),
+              Observer(builder: (_) {
+                return ElevatedButton(
+                  onPressed: titleController.isValid
+                      ? () {
+                          titleController.addTodo();
+                          controllernome.clear();
+                          controllersobrenome.clear();
+                        }
+                      : null,
+                  child: const Text('Adicionar'),
+                );
+              }),
               const SizedBox(
                 height: 20,
               ),

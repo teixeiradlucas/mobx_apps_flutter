@@ -19,6 +19,9 @@ abstract class _TitleControllerBase with Store {
   @action
   void novoSobrenome(String value) => sobrenome = value;
 
+  @computed
+  bool get isValid => nome.length > 2 && sobrenome.length > 2;
+
   ObservableList<ListController> observeList = ObservableList<ListController>();
 
   @action
