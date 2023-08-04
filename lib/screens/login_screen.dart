@@ -11,6 +11,11 @@ class LoginScreen extends StatelessWidget {
           'App Login',
         ),
       ),
+      body: const Column(
+        children: [
+          SizedBox(),
+        ],
+      ),
     );
   }
 }
