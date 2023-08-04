@@ -7,10 +7,10 @@ class LoginController = _LoginControllerBase with _$LoginController;
 
 abstract class _LoginControllerBase with Store {
   @observable
-  String login = '';
+  String email = '';
 
   @action
-  void getlogin(String value) => login = value;
+  void getEmail(String value) => email = value;
 
   @observable
   String password = '';
@@ -22,11 +22,11 @@ abstract class _LoginControllerBase with Store {
   bool get passwordValid => password.length >= 8;
 
   @computed
-  bool get loginValid =>
-      login.contains('.') &&
+  bool get emailValid =>
+      email.contains('.') &&
       RegExp(r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$")
-          .hasMatch(login);
+          .hasMatch(email);
 
   @computed
-  bool get isValid => loginValid && passwordValid;
+  bool get isValid => emailValid && passwordValid;
 }

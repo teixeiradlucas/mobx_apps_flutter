@@ -18,9 +18,9 @@ class LoginScreen extends StatelessWidget {
       body: Column(
         children: [
           TextFieldWidget(
-            labeltext: 'Login',
+            labeltext: 'E-mail',
             obscure: false,
-            onchanged: logincontroller.getlogin,
+            onchanged: logincontroller.getEmail,
           ),
           const SizedBox(
             height: 20,
