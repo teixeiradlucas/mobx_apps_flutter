@@ -10,7 +10,7 @@ class TextFieldWidget extends StatelessWidget {
 
   final bool obscure;
   final String labeltext;
-  final Function(String)? onchanged;
+  final void Function(String)? onchanged;
 
   @override
   Widget build(BuildContext context) {
