@@ -18,6 +18,12 @@ abstract class _LoginControllerBase with Store {
   @action
   void getPassword(String value) => password = value;
 
+  @observable
+  bool passwordinvisibility = true;
+
+  @action
+  void visibilityAction() => passwordinvisibility = !passwordinvisibility;
+
   @computed
   bool get passwordValid => password.length >= 8;
 

@@ -6,10 +6,14 @@ class TextFieldWidget extends StatelessWidget {
     required this.obscure,
     required this.onchanged,
     super.key,
+    this.prefix,
+    this.suffix,
   });
 
   final bool obscure;
   final String labeltext;
+  final Widget? suffix;
+  final Widget? prefix;
   final void Function(String)? onchanged;
 
   @override
@@ -20,6 +24,8 @@ class TextFieldWidget extends StatelessWidget {
       decoration: InputDecoration(
         border: const OutlineInputBorder(),
         labelText: labeltext,
+        prefixIcon: prefix,
+        suffixIcon: suffix,
       ),
     );
   }
