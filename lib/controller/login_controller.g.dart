@@ -16,12 +16,12 @@ mixin _$LoginController on _LoginControllerBase, Store {
       (_$passwordValidComputed ??= Computed<bool>(() => super.passwordValid,
               name: '_LoginControllerBase.passwordValid'))
           .value;
-  Computed<bool>? _$loginValidComputed;
+  Computed<bool>? _$emailValidComputed;
 
   @override
-  bool get loginValid =>
-      (_$loginValidComputed ??= Computed<bool>(() => super.loginValid,
-              name: '_LoginControllerBase.loginValid'))
+  bool get emailValid =>
+      (_$emailValidComputed ??= Computed<bool>(() => super.emailValid,
+              name: '_LoginControllerBase.emailValid'))
           .value;
   Computed<bool>? _$isValidComputed;
 
@@ -30,19 +30,19 @@ mixin _$LoginController on _LoginControllerBase, Store {
           name: '_LoginControllerBase.isValid'))
       .value;
 
-  late final _$loginAtom =
-      Atom(name: '_LoginControllerBase.login', context: context);
+  late final _$emailAtom =
+      Atom(name: '_LoginControllerBase.email', context: context);
 
   @override
-  String get login {
-    _$loginAtom.reportRead();
-    return super.login;
+  String get email {
+    _$emailAtom.reportRead();
+    return super.email;
   }
 
   @override
-  set login(String value) {
-    _$loginAtom.reportWrite(value, super.login, () {
-      super.login = value;
+  set email(String value) {
+    _$emailAtom.reportWrite(value, super.email, () {
+      super.email = value;
     });
   }
 
@@ -62,15 +62,32 @@ mixin _$LoginController on _LoginControllerBase, Store {
     });
   }
 
+  late final _$passwordinvisibilityAtom =
+      Atom(name: '_LoginControllerBase.passwordinvisibility', context: context);
+
+  @override
+  bool get passwordinvisibility {
+    _$passwordinvisibilityAtom.reportRead();
+    return super.passwordinvisibility;
+  }
+
+  @override
+  set passwordinvisibility(bool value) {
+    _$passwordinvisibilityAtom.reportWrite(value, super.passwordinvisibility,
+        () {
+      super.passwordinvisibility = value;
+    });
+  }
+
   late final _$_LoginControllerBaseActionController =
       ActionController(name: '_LoginControllerBase', context: context);
 
   @override
-  void getlogin(String value) {
+  void getEmail(String value) {
     final _$actionInfo = _$_LoginControllerBaseActionController.startAction(
-        name: '_LoginControllerBase.getlogin');
+        name: '_LoginControllerBase.getEmail');
     try {
-      return super.getlogin(value);
+      return super.getEmail(value);
     } finally {
       _$_LoginControllerBaseActionController.endAction(_$actionInfo);
     }
@@ -88,12 +105,24 @@ mixin _$LoginController on _LoginControllerBase, Store {
   }
 
   @override
+  void visibilityAction() {
+    final _$actionInfo = _$_LoginControllerBaseActionController.startAction(
+        name: '_LoginControllerBase.visibilityAction');
+    try {
+      return super.visibilityAction();
+    } finally {
+      _$_LoginControllerBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
-login: ${login},
+email: ${email},
 password: ${password},
+passwordinvisibility: ${passwordinvisibility},
 passwordValid: ${passwordValid},
-loginValid: ${loginValid},
+emailValid: ${emailValid},
 isValid: ${isValid}
     ''';
   }

@@ -17,18 +17,35 @@ class LoginScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          TextFieldWidget(
-            labeltext: 'Login',
-            obscure: false,
-            onchanged: logincontroller.getlogin,
-          ),
           const SizedBox(
             height: 20,
           ),
           TextFieldWidget(
-            labeltext: 'Senha',
-            obscure: true,
-            onchanged: logincontroller.getPassword,
+            prefix: const Icon(Icons.person_pin),
+            labeltext: 'E-mail',
+            obscure: false,
+            onchanged: logincontroller.getEmail,
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Observer(
+            builder: (_) {
+              return TextFieldWidget(
+                prefix: const Icon(Icons.lock),
+                suffix: IconButton(
+                  onPressed: logincontroller.visibilityAction,
+                  icon: Icon(
+                    logincontroller.passwordinvisibility
+                        ? Icons.visibility
+                        : Icons.visibility_off,
+                  ),
+                ),
+                labeltext: 'Senha',
+                obscure: logincontroller.passwordinvisibility,
+                onchanged: logincontroller.getPassword,
+              );
+            },
           ),
           const SizedBox(
             height: 20,
