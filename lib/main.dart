@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobx_apps/app_list/screens/list_screen.dart';
+import 'package:mobx_apps/login_app/screens/login_screen.dart';
+
 
 void main() => runApp(const MyApp());
 
@@ -9,13 +11,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Apps Mobx',
+      title: 'Apps MobX',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const ListScreen(),
+      home: const LoginScreen(),
+      //home: const ListScreen(),
     );
   }
 }
