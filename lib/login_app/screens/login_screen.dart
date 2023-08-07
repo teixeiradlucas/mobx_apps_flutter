@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:mobx_apps/controller/login_controller.dart';
-import 'package:mobx_apps/widgets/textfield_widget.dart';
+import 'package:mobx_apps/login_app/controller/login_controller.dart';
+import 'package:mobx_apps/login_app/widgets/textfield_widget.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
