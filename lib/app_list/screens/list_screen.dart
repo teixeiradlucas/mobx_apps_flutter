@@ -51,18 +51,20 @@ class ListScreen extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-              Observer(builder: (_) {
-                return ElevatedButton(
-                  onPressed: titleController.isValid
-                      ? () {
-                          titleController.addTodo();
-                          controllernome.clear();
-                          controllersobrenome.clear();
-                        }
-                      : null,
-                  child: const Text('Adicionar'),
-                );
-              }),
+              Observer(
+                builder: (_) {
+                  return ElevatedButton(
+                    onPressed: titleController.isValid
+                        ? () {
+                            titleController.addTodo();
+                            controllernome.clear();
+                            controllersobrenome.clear();
+                          }
+                        : null,
+                    child: const Text('Adicionar'),
+                  );
+                },
+              ),
               const SizedBox(
                 height: 20,
               ),
