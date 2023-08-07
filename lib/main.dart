@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobx_apps/screens/list_screen.dart';
+import 'package:mobx_apps/app_list/screens/list_screen.dart';
 
 void main() => runApp(const MyApp());
 

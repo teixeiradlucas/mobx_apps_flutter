@@ -1,7 +1,7 @@
 // ignore_for_file: use_setters_to_change_properties
 
 import 'package:mobx/mobx.dart';
-import 'package:mobx_apps/controller/list_controller.dart';
+import 'package:mobx_apps/app_list/controller/list_controller.dart';
 part 'title_controller.g.dart';
 
 class TitleController = _TitleControllerBase with _$TitleController;
