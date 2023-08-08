@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mobx_apps/app_counter/screens/counter_screen.dart';
+import 'package:mobx_apps/app_formulario_reativo/screens/formulario_screen.dart';
+//import 'package:mobx_apps/app_counter/screens/counter_screen.dart';
 //import 'package:mobx_apps/app_list/screens/list_screen.dart';
 //import 'package:mobx_apps/app_login/screens/login_screen.dart';
 
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const CouterScreen(),
+      home: const FormScreen(), //AppFormulario
+      //home: const CouterScreen(), //AppCounter
       //home: const LoginScreen(), //AppLogin
       //home: const ListScreen(), //AppList
     );

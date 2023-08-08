@@ -33,7 +33,7 @@ class ListScreen extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-              WidgetTextfield(
+              TextFieldWidget(
                 text: 'Nome',
                 width: textwidth,
                 controller: controllernome,
@@ -42,7 +42,7 @@ class ListScreen extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              WidgetTextfield(
+              TextFieldWidget(
                 text: 'Sobrenome',
                 width: textwidth,
                 controller: controllersobrenome,
