@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class WidgetTextfield extends StatelessWidget {
-  const WidgetTextfield({
+class TextFieldWidget extends StatelessWidget {
+  const TextFieldWidget({
     required this.action,
     required this.text,
     required this.width,
