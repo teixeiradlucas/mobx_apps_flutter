@@ -26,5 +26,6 @@ abstract class _TodoListControllerBase with Store {
         newTodoTitle,
       ),
     );
+    newTodoTitle = '';
   }
 }
