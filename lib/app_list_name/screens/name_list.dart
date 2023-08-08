@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:mobx_apps/app_list/controller/title_controller.dart';
+import 'package:mobx_apps/app_list_name/controller/title_controller.dart';
 
-class TodoList extends StatelessWidget {
-  const TodoList({
+class NameList extends StatelessWidget {
+  const NameList({
     required this.titleController,
     super.key,
   });

@@ -1,7 +1,7 @@
 // ignore_for_file: use_setters_to_change_properties
 
 import 'package:mobx/mobx.dart';
-import 'package:mobx_apps/app_list/controller/list_controller.dart';
+import 'package:mobx_apps/app_list_name/controller/name_list_controller.dart';
 part 'title_controller.g.dart';
 
 class TitleController = _TitleControllerBase with _$TitleController;
@@ -22,13 +22,14 @@ abstract class _TitleControllerBase with Store {
   @computed
   bool get isValid => nome.length > 2 && sobrenome.length > 2;
 
-  ObservableList<ListController> observeList = ObservableList<ListController>();
+  ObservableList<NameListController> observeList =
+      ObservableList<NameListController>();
 
   @action
   void addTodo() {
     observeList.insert(
       0,
-      ListController('$nome $sobrenome'),
+      NameListController('$nome $sobrenome'),
     );
     nome = '';
     sobrenome = '';
