@@ -10,6 +10,7 @@ class CouterScreen extends StatelessWidget {
     final controller = CounterController();
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.redAccent,
         title: const Text(
           'App Counter',
         ),
@@ -39,6 +40,7 @@ class CouterScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.redAccent,
         onPressed: controller.countIncrement,
         tooltip: 'Increment',
         child: const Icon(

@@ -8,6 +8,7 @@ class TodoScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textcontroller = TextEditingController();
     final listcontroller = TodoListController();
     return Scaffold(
       appBar: AppBar(
@@ -30,9 +31,13 @@ class TodoScreen extends StatelessWidget {
                 icon: const Icon(
                   Icons.add,
                 ),
-                onPressed: listcontroller.addTodo,
+                onPressed: () {
+                  listcontroller.addTodo();
+                  textcontroller.clear();
+                },
               ),
               text: 'Tarefas',
+              textcontroller: textcontroller,
             ),
             Expanded(
               child: Observer(

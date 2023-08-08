@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mobx_apps/app_login/controller/login_controller.dart';
+import 'package:mobx_apps/app_login/screens/logout_screen.dart';
 import 'package:mobx_apps/app_login/widgets/textfield_widget.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -11,6 +12,7 @@ class LoginScreen extends StatelessWidget {
     final logincontroller = LoginController();
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.deepPurple,
         title: const Text(
           'App Login',
         ),
@@ -53,7 +55,15 @@ class LoginScreen extends StatelessWidget {
           Observer(
             builder: (_) {
               return ElevatedButton(
-                onPressed: logincontroller.isValid ? () {} : null,
+                onPressed: logincontroller.isValid
+                    ? () {
+                        Navigator.of(context).pushReplacement(
+                          MaterialPageRoute<dynamic>(
+                            builder: (context) => const LogoutScreen(),
+                          ),
+                        );
+                      }
+                    : null,
                 child: const Text('LOGIN'),
               );
             },
