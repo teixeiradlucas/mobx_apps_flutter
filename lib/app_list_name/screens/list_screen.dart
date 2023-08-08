@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:mobx_apps/app_list/controller/title_controller.dart';
-import 'package:mobx_apps/app_list/screens/todo_list.dart';
-import 'package:mobx_apps/app_list/widgets/textfield_widget.dart';
+import 'package:mobx_apps/app_list_name/controller/title_controller.dart';
+import 'package:mobx_apps/app_list_name/screens/name_list.dart';
+import 'package:mobx_apps/app_list_name/widgets/textfield_widget.dart';
 
 class ListScreen extends StatelessWidget {
   const ListScreen({super.key});
@@ -20,7 +20,7 @@ class ListScreen extends StatelessWidget {
         backgroundColor: const Color.fromARGB(255, 3, 168, 173),
         title: const Center(
           child: Text(
-            'Apps List',
+            'Apps Name List',
           ),
         ),
       ),
@@ -68,7 +68,7 @@ class ListScreen extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              TodoList(
+              NameList(
                 titleController: titleController,
               ),
             ],
