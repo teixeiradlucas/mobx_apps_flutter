@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mobx_apps/app_counter/controller/counter_controller.dart';
+import 'package:mobx_apps/widgets/appbar_widget.dart';
 
 class CouterScreen extends StatelessWidget {
   const CouterScreen({super.key});
@@ -9,11 +10,9 @@ class CouterScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = CounterController();
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.redAccent,
-        title: const Text(
-          'App Counter',
-        ),
+      appBar: AppbarWidget(
+        'App Counter',
+        Colors.redAccent,
       ),
       body: Center(
         child: Column(

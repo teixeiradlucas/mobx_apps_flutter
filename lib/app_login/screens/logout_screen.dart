@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobx_apps/app_login/screens/login_screen.dart';
+import 'package:mobx_apps/widgets/appbar_widget.dart';
 
 class LogoutScreen extends StatelessWidget {
   const LogoutScreen({super.key});
@@ -7,11 +8,9 @@ class LogoutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Logado',
-        ),
-        backgroundColor: Colors.deepPurple,
+      appBar: AppbarWidget(
+        'LOGADO',
+        Colors.deepPurple,
       ),
       body: Center(
         child: Column(

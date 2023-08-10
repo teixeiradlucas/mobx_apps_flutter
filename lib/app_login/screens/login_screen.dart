@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mobx_apps/app_login/controller/login_controller.dart';
 import 'package:mobx_apps/app_login/screens/logout_screen.dart';
-import 'package:mobx_apps/app_login/widgets/textfield_widget.dart';
+import 'package:mobx_apps/widgets/appbar_widget.dart';
+import 'package:mobx_apps/widgets/textfield_widget.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -11,11 +12,9 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final logincontroller = LoginController();
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.deepPurple,
-        title: const Text(
-          'App Login',
-        ),
+      appBar: AppbarWidget(
+        'App Login',
+        Colors.deepPurple,
       ),
       body: Column(
         children: [
@@ -24,9 +23,9 @@ class LoginScreen extends StatelessWidget {
           ),
           TextFieldWidget(
             prefix: const Icon(Icons.person_pin),
-            labeltext: 'E-mail',
+            labelText: 'E-mail',
             obscure: false,
-            onchanged: logincontroller.getEmail,
+            onChanged: logincontroller.getEmail,
           ),
           const SizedBox(
             height: 20,
@@ -43,9 +42,9 @@ class LoginScreen extends StatelessWidget {
                         : Icons.visibility_off,
                   ),
                 ),
-                labeltext: 'Senha',
+                labelText: 'Senha',
                 obscure: logincontroller.passwordinvisibility,
-                onchanged: logincontroller.getPassword,
+                onChanged: logincontroller.getPassword,
               );
             },
           ),

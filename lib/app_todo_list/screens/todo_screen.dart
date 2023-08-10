@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mobx_apps/app_todo_list/controller/todolist_controller.dart';
-import 'package:mobx_apps/app_todo_list/widgets/textfield_widget.dart';
+import 'package:mobx_apps/widgets/appbar_widget.dart';
+import 'package:mobx_apps/widgets/space_widget.dart';
+import 'package:mobx_apps/widgets/textfield_widget.dart';
 
 class TodoScreen extends StatelessWidget {
   const TodoScreen({super.key});
@@ -11,23 +13,17 @@ class TodoScreen extends StatelessWidget {
     final textcontroller = TextEditingController();
     final listcontroller = TodoListController();
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blueAccent,
-        title: const Center(
-          child: Text(
-            'App Todo List',
-          ),
-        ),
+      appBar: AppbarWidget(
+        'App Todo List',
+        Colors.blueAccent,
       ),
       body: Center(
         child: Column(
           children: [
-            const SizedBox(
-              height: 20,
-            ),
+            const SpaceWidget(),
             TextFieldWidget(
-              onchanged: listcontroller.setNewTodoTitle,
-              suffixicon: IconButton(
+              onChanged: listcontroller.setNewTodoTitle,
+              suffix: IconButton(
                 icon: const Icon(
                   Icons.add,
                 ),
@@ -36,8 +32,8 @@ class TodoScreen extends StatelessWidget {
                   textcontroller.clear();
                 },
               ),
-              text: 'Tarefas',
-              textcontroller: textcontroller,
+              labelText: 'Tarefas',
+              controller: textcontroller,
             ),
             Expanded(
               child: Observer(
