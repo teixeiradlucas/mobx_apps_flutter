@@ -1,5 +1,4 @@
 # Exemplos de Apps com Flutter e MOBX
-Para utilizar basta tirar os commit "//" da *main.dart* do app que ira usar
 
 ![Screens](counter_app.jpg)
 ![Screens](login_app.jpg)
