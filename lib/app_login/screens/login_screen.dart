@@ -66,7 +66,7 @@ class LoginScreen extends StatelessWidget {
                 child: const Text('LOGIN'),
               );
             },
-          )
+          ),
         ],
       ),
     );
